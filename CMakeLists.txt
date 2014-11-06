@@ -2,20 +2,13 @@ cmake_minimum_required(VERSION 2.8)
 project(METIS)
 
 set(GKLIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/GKlib CACHE PATH "path to GKlib")
-set(SHARED FALSE CACHE BOOL "build a shared library")
+option(BUILD_SHARED_LIBS "build a shared library" OFF)
 
 if(MSVC)
   set(METIS_INSTALL FALSE)
 else()
   set(METIS_INSTALL TRUE)
 endif()
-
-# Configure libmetis library.
-if(SHARED)
-  set(METIS_LIBRARY_TYPE SHARED)
-else()
-  set(METIS_LIBRARY_TYPE STATIC)
-endif(SHARED)
 
 include(${GKLIB_PATH}/GKlibSystem.cmake)
 # Add include directories.
