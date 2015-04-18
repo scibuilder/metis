@@ -4,12 +4,6 @@ project(METIS)
 set(GKLIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/GKlib CACHE PATH "path to GKlib")
 option(BUILD_SHARED_LIBS "build a shared library" OFF)
 
-if(MSVC)
-  option(METIS_INSTALL FALSE)
-else()
-  option(METIS_INSTALL TRUE)
-endif()
-
 include(${GKLIB_PATH}/GKlibSystem.cmake)
 # Add include directories.
 include_directories(${GKLIB_PATH})
