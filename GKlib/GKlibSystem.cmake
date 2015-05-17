@@ -101,7 +101,7 @@ endif(HAVE_GETLINE)
 
 # Custom check for TLS.
 if(MSVC)
-  add_definitions(-D__thread=__declspec(thread))
+  add_definitions(-D__thread=__declspec\(thread\))
 else()
   # This if checks if that value is cached or not.
   if("${HAVE_THREADLOCALSTORAGE}" MATCHES "^${HAVE_THREADLOCALSTORAGE}$")
