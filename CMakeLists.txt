@@ -6,8 +6,8 @@ option(BUILD_SHARED_LIBS "build a shared library" OFF)
 
 include(${GKLIB_PATH}/GKlibSystem.cmake)
 # Add include directories.
-include_directories(${GKLIB_PATH})
-include_directories(include)
+include_directories(BEFORE ${GKLIB_PATH})
+include_directories(BEFORE include)
 # Recursively look for CMakeLists.txt in subdirs.
 add_subdirectory("include")
 add_subdirectory("libmetis")

@@ -6,7 +6,7 @@ set(GKLIB_PATH ${abs})
 unset(abs)
 include(GKlibSystem.cmake)
 
-include_directories(".")
+include_directories(BEFORE ".")
 add_library(GKlib ${GKlib_sources})
 if(UNIX)
   target_link_libraries(GKlib m)
@@ -15,7 +15,7 @@ elseif(MSVC)
   generate_export_header(GKlib)
 endif()
 
-include_directories("test")
+include_directories(BEFORE "test")
 add_subdirectory("test")
 
 install(TARGETS GKlib
