@@ -4,6 +4,7 @@ include_directories(BEFORE .)
 file(GLOB metis_sources *.c)
 # Build libmetis.
 add_library(metis ${GKlib_sources} ${metis_sources})
+target_link_libraries(metis ${CONAN_LIBS})
 if(UNIX)
   target_link_libraries(metis m)
 elseif(MSVC)
